@@ -1,4 +1,4 @@
-package com.example.hotelRoomAllocation;
+package com.example.hotelroomallocation;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,7 +1,7 @@
-package com.example.hotelRoomAllocation.controller;
+package com.example.hotelroomallocation.controller;
 
-import com.example.hotelRoomAllocation.dto.RoomBookingRequest;
-import com.example.hotelRoomAllocation.service.RoomOccupancyService;
+import com.example.hotelroomallocation.dto.RoomBookingRequest;
+import com.example.hotelroomallocation.service.RoomOccupancyService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +16,6 @@ public class RoomOccupancyController {
   @PostMapping("/occupancy")
   public ResponseEntity<?> calculateOccupancy(@RequestBody @Valid RoomBookingRequest request) {
 
-    if (request.potentialGuests().stream().anyMatch(guest -> guest < 0)) {
-      return ResponseEntity.badRequest().body("All guest amounts must be at least 1");
-    }
     return ResponseEntity.ok(roomOccupancyService.calculateOccupancy(request));
 
   }

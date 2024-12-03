@@ -1,9 +1,10 @@
-package com.example.hotelRoomAllocation.dto;
+package com.example.hotelroomallocation.dto;
 
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public record RoomBookingRequest(
@@ -13,8 +14,7 @@ public record RoomBookingRequest(
   @NotNull
   @Min(0)
   Integer economyRooms,
-  @NotNull
-  @Size(min = 0)
-  List<Double> potentialGuests
+  @NotEmpty
+  List<@Min(0) @NotNull BigDecimal> potentialGuests
 ) {
 }
