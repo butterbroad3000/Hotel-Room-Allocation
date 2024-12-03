@@ -1,7 +1,7 @@
-package com.example.hotelRoomAllocation.Controller;
+package com.example.hotelRoomAllocation.controller;
 
-import com.example.hotelRoomAllocation.DTO.RoomBookingRequest;
-import com.example.hotelRoomAllocation.Service.RoomOccupancyService;
+import com.example.hotelRoomAllocation.dto.RoomBookingRequest;
+import com.example.hotelRoomAllocation.service.RoomOccupancyService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

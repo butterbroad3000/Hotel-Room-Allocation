@@ -1,16 +1,14 @@
 package com.example.hotelRoomAllocation;
 
-import com.example.hotelRoomAllocation.DTO.RoomBookingRequest;
-import com.example.hotelRoomAllocation.DTO.RoomBookingResponse;
-import com.example.hotelRoomAllocation.Service.RoomOccupancyService;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 
-import org.springframework.test.util.ReflectionTestUtils;
+import com.example.hotelRoomAllocation.dto.RoomBookingRequest;
+import com.example.hotelRoomAllocation.dto.RoomBookingResponse;
+import com.example.hotelRoomAllocation.service.RoomOccupancyService;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
@@ -18,18 +16,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
+@SpringBootTest
 public class RoomOccupancyServiceTest {
 
-  @InjectMocks
+  @Autowired
   private RoomOccupancyService roomOccupancyService;
   @Mock
   private RoomBookingRequest request;
-
-  @BeforeEach
-  void setUp() {
-    ReflectionTestUtils.setField(roomOccupancyService, "premiumThreshold", 100.0);
-  }
 
   @Test
   void testCalculateOccupancy_case1() {

@@ -1,4 +1,4 @@
-package com.example.hotelRoomAllocation.DTO;
+package com.example.hotelRoomAllocation.dto;
 
 public record RoomBookingResponse(
   int usagePremium,
